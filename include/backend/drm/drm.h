@@ -1,6 +1,7 @@
 #ifndef BACKEND_DRM_DRM_H
 #define BACKEND_DRM_DRM_H
 
+#include <gbm.h>
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
@@ -62,6 +63,7 @@ struct wlr_drm_backend {
 	int fd;
 	char *name;
 	struct wlr_device *dev;
+	struct gbm_device *gbm;
 
 	size_t num_crtcs;
 	struct wlr_drm_crtc *crtcs;

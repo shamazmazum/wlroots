@@ -234,6 +234,12 @@ struct wlr_backend *wlr_drm_backend_create(struct wl_display *display,
 		goto error_event;
 	}
 
+	drm->gbm = gbm_create_device(drm->fd);
+	if (!drm->gbm) {
+		wlr_log(WLR_ERROR, "Failed to create GBM device");
+		goto error_resources;
+	}
+
 	if (drm->parent) {
 		if (!init_drm_renderer(drm, &drm->mgpu_renderer)) {
 			wlr_log(WLR_ERROR, "Failed to initialize renderer");

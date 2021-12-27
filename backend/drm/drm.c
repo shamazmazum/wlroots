@@ -3,8 +3,8 @@
 #include <drm_fourcc.h>
 #include <drm_mode.h>
 #include <errno.h>
-#include <fcntl.h>
 #include <inttypes.h>
+#include <fcntl.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
